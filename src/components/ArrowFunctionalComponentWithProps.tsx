@@ -4,7 +4,12 @@
  * Το title θα το δηλώσουμε
  * μέσα στο App.tsx
  */
-type Props = {
+// type Props = {
+//     title: string;
+// }
+
+// Γίνεται και με interface
+interface Props {
     title: string;
 }
 
