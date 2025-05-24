@@ -5,8 +5,8 @@ type State = {
 }
 
 // Δεν έχουμε Props οπότε βάζουμε αγκύλες
-class ClassComponentWithState extends Component<{}, State> {
-  constructor(props:{}) {
+class ClassComponentWithState extends Component<object, State> {
+  constructor(props: object) {
     super(props);
     this.state = {
       count: 0,
