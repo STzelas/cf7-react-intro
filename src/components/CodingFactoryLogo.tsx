@@ -2,7 +2,7 @@ const CodingFactoryLogo = () => {
     return (
         <>
             <img
-                className={"h-16 mx-2"}
+                className={"h-16 my-4"}
                 src={'/cfLogo.png'}
                 alt="CodingFactoryLogo" />
         </>
