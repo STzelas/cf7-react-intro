@@ -25,7 +25,7 @@ const Counter = () => {
         <div className="text-center space-x-4">
           <CounterButton onClick={increaseCount} label="Increase" addClass={"bg-green-600"}/>
           <CounterButton onClick={decreaseCount} label={"Decrease"} disabled={count === 0} addClass={"bg-red-600"}/>
-          <CounterButton onClick={reset} label={"Reset"} disabled={count === 0} addClass="bg-red-400"/>
+          <CounterButton onClick={reset} label={"Reset"} disabled={count === 0} addClass="bg-cf-dark-red"/>
         </div>
       </div>
     </>
