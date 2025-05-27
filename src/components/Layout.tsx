@@ -13,11 +13,14 @@ interface LayoutProps {
 const Layout = ({children}: LayoutProps) => {
     return (
         <>
-          <Header/>
-          <div className="container mx-auto min-h-[95vh] pt-24">
-            {children}
+          <div className={"min-h-[100vh]"}>
+            <Header/>
+            <div className="container mx-auto min-h-[95vh] pt-24">
+              {children}
+            </div>
+            <Footer/>
           </div>
-          <Footer/>
+
         </>
     )
 }
