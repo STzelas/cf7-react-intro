@@ -1,3 +1,5 @@
+import { Trash2 } from "lucide-react"
+
 type Todo = {
   id: number
   text: string
@@ -23,8 +25,9 @@ const TodoList = ({todos,dispatch}: TodoListProps<{type: "DELETE"; payload: numb
               <span>{todo.text}</span>
               <button
                 onClick={handleDelete(todo.id)}
-                className="text-cf-dark-red hover:underline">
-                Delete</button>
+                className="text-cf-dark-red">
+                <Trash2 size={18} />
+              </button>
             </li>
           )
         )}
