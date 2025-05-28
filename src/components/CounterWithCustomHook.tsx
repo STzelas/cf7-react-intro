@@ -17,6 +17,7 @@ const CounterWithCustomHook = () => {
             <CounterButton onClick={reset} label={"Reset"} disabled={count === 0} addClass="bg-cf-dark-red"/>
           </div>
         </div>
+        {/*<p className={"text-center pt-8"}>Last change: <strong>{lastAction || "-"}</strong> at: <strong>{time}</strong></p>*/}
       </>
     </>
   )
