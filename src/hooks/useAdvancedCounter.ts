@@ -55,6 +55,7 @@ export const useAdvancedCounter = (initialValue: number = 0) => {
     count: state.count,
     lastAction: state.lastAction,
     time: state.time,
+    // state,
     increase,
     decrease,
     reset,
