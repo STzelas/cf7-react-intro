@@ -19,10 +19,7 @@ const NameChanger = () => {
     document.title = name ? `Hello, ${name}!` : "Hello, Stranger"
   }, [name])
 
-  useEffect(() => {
-    const id: number = setInterval( () => console.log("tick"), 1000)
-    return() =>  clearInterval(id)
-  }, [])
+
 
   /**
    * Στο input θέλουμε να πάρουμε το value
