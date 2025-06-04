@@ -10,7 +10,7 @@ import Layout from "./components/Layout.tsx";
 // import CounterWithReducer from "./components/CounterWithReducer.tsx";
 // import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 // import Counter from "./components/Counter.tsx";
-// import NameChanger from "./components/NameChanger.tsx";
+import NameChanger from "./components/NameChanger.tsx";
 // import { useEffect } from "react";
 import OnlineStatus from "./components/OnlineStatus.tsx";
 // import Counter from "./components/Counter.tsx";
@@ -30,7 +30,6 @@ function App() {
   return (
     <>
       <Layout>
-        <OnlineStatus/>
         {/*<Todo />*/}
         {/*<CounterWithReducer/>*/}
         {/*<CounterAdvancedWithCustomHook/>*/}
@@ -38,7 +37,8 @@ function App() {
         {/*<CounterAdvanced/>*/}
         {/*<CounterWithMoreStates/>*/}
         {/*<Counter/>*/}
-        {/*<NameChanger/>*/}
+        <NameChanger/>
+        <OnlineStatus/>
         {/*<FunctionalComponentWithState/>*/}
         {/*<ClassComponentWithState/>*/}
         {/*<ClassComponent/>*/}
