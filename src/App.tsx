@@ -30,6 +30,7 @@ function App() {
   return (
     <>
       <Layout>
+        <OnlineStatus/>
         {/*<Todo />*/}
         {/*<CounterWithReducer/>*/}
         {/*<CounterAdvancedWithCustomHook/>*/}
@@ -38,7 +39,6 @@ function App() {
         {/*<CounterWithMoreStates/>*/}
         {/*<Counter/>*/}
         <NameChanger/>
-        <OnlineStatus/>
         {/*<FunctionalComponentWithState/>*/}
         {/*<ClassComponentWithState/>*/}
         {/*<ClassComponent/>*/}
