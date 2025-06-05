@@ -10,6 +10,7 @@ import NameChangerPage from "./pages/NameChangerPage.tsx";
 import Layout from "./components/Layout.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
 import UserPage from "./pages/UserPage.tsx";
+import RouterLayout from "./components/RouterLayout.tsx";
 // import Layout from "./components/Layout.tsx";
 // import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
 // import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
@@ -58,18 +59,20 @@ function App() {
       {/*</Layout>*/}
 
       <BrowserRouter>
-        <Layout>
+        {/*<Layout>*/}
           <Routes>
             {/*<Route path={"/"} element={<HomePage/>}/>*/}
-            <Route index element={<HomePage/>}/>
-            <Route path={"examples"}>   {/* /examples/... */}
-              <Route path="name-changer" element={<NameChangerPage/>}/>
-              <Route path="online-status" element={<OnlineStatusPage/>}/>
+            <Route element={<RouterLayout/>}>
+            {/* Εδώ βάζουμε τα στοιχεία που θέλουμε να ακολουθήσουν στο layout */}
+              <Route index element={<HomePage/>}/>
+              <Route path={"examples"}>   {/* /examples/... */}
+                <Route path="name-changer" element={<NameChangerPage/>}/>
+                <Route path="online-status" element={<OnlineStatusPage/>}/>
+              </Route>
+              <Route path="users/:userId" element={<UserPage/>}/>
             </Route>
-            <Route path="users/:userId" element={<UserPage/>}/>
-
           </Routes>
-        </Layout>
+        {/*</Layout>*/}
 
       </BrowserRouter>
     </>
