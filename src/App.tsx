@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage.tsx";
 import NameChangerPage from "./pages/NameChangerPage.tsx";
 import Layout from "./components/Layout.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
+import UserPage from "./pages/UserPage.tsx";
 // import Layout from "./components/Layout.tsx";
 // import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
 // import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
@@ -65,6 +66,7 @@ function App() {
               <Route path="name-changer" element={<NameChangerPage/>}/>
               <Route path="online-status" element={<OnlineStatusPage/>}/>
             </Route>
+            <Route path="users/:userId" element={<UserPage/>}/>
 
           </Routes>
         </Layout>
