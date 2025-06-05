@@ -23,7 +23,6 @@ const OnlineStatus = () => {
 
   return(
     <>
-      {/*<div className="bg-green-500 text-white text-center mt-6 p-4 rounded mx-4">*/}
       <div className={`text-white text-center mt-6 p-4 rounded mx-4 ${isOnline ? "bg-green-500" : "bg-cf-dark-red"}`}>
         { isOnline ? "You are online" : "You are offline" }
       </div>
