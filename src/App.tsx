@@ -9,6 +9,7 @@ import ExamplesPage from "./pages/ExamplesPage.tsx";
 import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import AutoRedirectAdvanced from "./components/AutoRedirectAdvanced.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 
 
@@ -62,6 +63,13 @@ function App() {
 
             <Route path="users/:userId" element={<UserPage/>}/>
             <Route path="users" element={<UserPage/>}/>
+
+
+            {/* Στο τέλος των routes!! έχουμε
+            το παρακάτω / το * σημαίνει catch all errors
+             ΠΑΝΤΑ ΣΤΟ ΤΕΛΟΣ ΓΙΑΤΙ ΑΛΛΙΩΣ
+             ΕΧΕΙ ΠΡΟΒΛΗΜΑ ΜΕ ΤΗΝ ΠΡΟΤΕΡΑΙΟΤΗΤΑ*/}
+            <Route path="*" element={<NotFoundPage/>}/>
 
           </Routes>
         {/*</Layout>*/}
