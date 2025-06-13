@@ -4,11 +4,10 @@ import {useEffect} from "react";
 const AutoRedirect = () => {
 
   const navigate = useNavigate();  // για redirect
-  // navigate("/examples")
 
   useEffect(() => {
     const timer: number = setTimeout(() => {
-      navigate('/examples');
+      navigate('/examples/name-changer');
     }, 5000)
 
     return() => clearTimeout(timer);
