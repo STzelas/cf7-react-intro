@@ -8,6 +8,7 @@ import RouterLayout from "./components/RouterLayout.tsx";
 import ExamplesPage from "./pages/ExamplesPage.tsx";
 import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
+import AutoRedirectAdvanced from "./components/AutoRedirectAdvanced.tsx";
 
 
 
@@ -56,6 +57,7 @@ function App() {
               <Route path="name-changer" element={<NameChangerPage/>}/>
               <Route path="online-status" element={<OnlineStatusPage/>}/>
               <Route path="auto-redirect" element={<AutoRedirectPage/>}/>
+              <Route path="auto-redirect-advanced" element={<AutoRedirectAdvanced/>}/>
             </Route>
 
             <Route path="users/:userId" element={<UserPage/>}/>
