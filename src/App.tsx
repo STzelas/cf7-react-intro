@@ -12,6 +12,7 @@ import AutoRedirectAdvanced from "./components/FunctionalComponents/AutoRedirect
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import FocusInput from "./components/FunctionalComponents/FocusInput.tsx";
 import UncontrolledInput from "./components/FunctionalComponents/UncontrolledInput.tsx";
+import MultiFieldForm from "./components/FormComponents/MultiFieldForm.tsx";
 
 
 
@@ -53,6 +54,7 @@ function App() {
             <Route element={<RouterLayout/>}>
             {/* Εδώ βάζουμε τα στοιχεία που θέλουμε να ακολουθήσουν στο layout */}
               <Route index element={<HomePage/>}/>
+              <Route path="multi-field-form" element={<MultiFieldForm/>}/>
             </Route>
 
             <Route path="examples" element={<RouterExamplesLayout/>}>
