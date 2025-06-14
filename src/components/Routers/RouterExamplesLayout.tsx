@@ -10,9 +10,10 @@ const RouterExamplesLayout = () => {
       <div className={"min-h-[100vh]"}>
         <HeaderResponsive/>
         <div className="container mx-auto min-h-[86vh] pt-24">
+          <ExamplesSection/>
           <Outlet/>
+
         </div>
-        <ExamplesSection/>
         <Footer/>
       </div>
 
