@@ -10,8 +10,8 @@ import RouterExamplesLayout from "./components/Routers/RouterExamplesLayout.tsx"
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import AutoRedirectAdvanced from "./components/FunctionalComponents/AutoRedirectAdvanced.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
-import FocusInput from "./components/FocusInput.tsx";
-import UncontrolledInput from "./components/UncontrolledInput.tsx";
+import FocusInput from "./components/FunctionalComponents/FocusInput.tsx";
+import UncontrolledInput from "./components/FunctionalComponents/UncontrolledInput.tsx";
 
 
 
