@@ -1,5 +1,5 @@
-import HeaderResponsive from "./HeaderResponsive.tsx";
-import Footer from "./Footer.tsx";
+import HeaderResponsive from "../LayoutComponents/HeaderResponsive.tsx";
+import Footer from "../LayoutComponents/Footer.tsx";
 import {Outlet} from "react-router";
 
 const RouterLayout = () => {

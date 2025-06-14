@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import AutoRedirect from "../components/AutoRedirect.tsx";
+import AutoRedirect from "../components/FunctionalComponents/AutoRedirect.tsx";
 
 const AutoRedirectPage = () => {
 

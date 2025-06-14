@@ -1,4 +1,4 @@
-import NameChanger from "../components/NameChanger.tsx";
+import NameChanger from "../components/FunctionalComponents/NameChanger.tsx";
 import {useEffect} from "react";
 
 const NameChangerPage = () => {

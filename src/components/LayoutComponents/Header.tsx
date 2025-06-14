@@ -1,4 +1,4 @@
-import CodingFactoryLogo from "./CodingFactoryLogo.tsx";
+import CodingFactoryLogo from "../FunctionalComponents/CodingFactoryLogo.tsx";
 import {Link} from "react-router";
 
 const Header = () => {

@@ -1,6 +1,6 @@
 import CounterButton from "./CounterButton.tsx";
 // import {useCounter} from "../hooks/useCounter.ts";
-import { useCounterWithReducer} from "../hooks/useCounterWithReducer.ts";
+import { useCounterWithReducer} from "../../hooks/useCounterWithReducer.ts";
 
 const CounterWithReducer = () => {
 

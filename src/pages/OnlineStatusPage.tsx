@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import OnlineStatus from "../components/OnlineStatus.tsx";
+import OnlineStatus from "../components/FunctionalComponents/OnlineStatus.tsx";
 
 const OnlineStatusPage = () => {
 

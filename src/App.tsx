@@ -4,12 +4,13 @@ import HomePage from "./pages/HomePage.tsx";
 import NameChangerPage from "./pages/NameChangerPage.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
 import UserPage from "./pages/UserPage.tsx";
-import RouterLayout from "./components/RouterLayout.tsx";
+import RouterLayout from "./components/Routers/RouterLayout.tsx";
 import ExamplesPage from "./pages/ExamplesPage.tsx";
-import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
+import RouterExamplesLayout from "./components/Routers/RouterExamplesLayout.tsx";
 import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
-import AutoRedirectAdvanced from "./components/AutoRedirectAdvanced.tsx";
+import AutoRedirectAdvanced from "./components/FunctionalComponents/AutoRedirectAdvanced.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
+import FocusInput from "./components/FocusInput.tsx";
 
 
 
@@ -59,6 +60,7 @@ function App() {
               <Route path="online-status" element={<OnlineStatusPage/>}/>
               <Route path="auto-redirect" element={<AutoRedirectPage/>}/>
               <Route path="auto-redirect-advanced" element={<AutoRedirectAdvanced/>}/>
+              <Route path="focus-input" element={<FocusInput/>}/>
             </Route>
 
             <Route path="users/:userId" element={<UserPage/>}/>

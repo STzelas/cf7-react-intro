@@ -1,5 +1,5 @@
 import CounterButton from "./CounterButton.tsx";
-import {useCounter} from "../hooks/useCounter.ts";
+import {useCounter} from "../../hooks/useCounter.ts";
 
 const CounterWithCustomHook = () => {
 
