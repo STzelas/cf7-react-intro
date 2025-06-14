@@ -34,18 +34,11 @@ const HeaderResponsive = () => {
               Examples
             </Link>
             <Link
-              to="/examples/name-changer"
+              to="/multi-field-form"
               className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
               onClick={() => {setMenuOpen(false)}}
             >
-              Name Changer App
-            </Link>
-            <Link
-              to="/examples/online-status"
-              className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
-              onClick={() => {setMenuOpen(false)}}
-            >
-              Online Status App
+              Multi-Field Form
             </Link>
           </nav>
 
