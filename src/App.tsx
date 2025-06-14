@@ -11,6 +11,7 @@ import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import AutoRedirectAdvanced from "./components/FunctionalComponents/AutoRedirectAdvanced.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import FocusInput from "./components/FocusInput.tsx";
+import UncontrolledInput from "./components/UncontrolledInput.tsx";
 
 
 
@@ -61,6 +62,7 @@ function App() {
               <Route path="auto-redirect" element={<AutoRedirectPage/>}/>
               <Route path="auto-redirect-advanced" element={<AutoRedirectAdvanced/>}/>
               <Route path="focus-input" element={<FocusInput/>}/>
+              <Route path="uncontrolled-input" element={<UncontrolledInput/>}/>
             </Route>
 
             <Route path="users/:userId" element={<UserPage/>}/>
