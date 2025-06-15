@@ -33,19 +33,26 @@ const HeaderResponsive = () => {
             >
               Examples
             </Link>
-            <Link
-              to="/multi-field-form"
-              className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
-              onClick={() => {setMenuOpen(false)}}
-            >
-              Multi-Field Form
-            </Link>
+            {/*<Link*/}
+            {/*  to="/multi-field-form"*/}
+            {/*  className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}*/}
+            {/*  onClick={() => {setMenuOpen(false)}}*/}
+            {/*>*/}
+            {/*  Multi-Field Form*/}
+            {/*</Link>*/}
             <Link
               to="/multi-field-form-validation"
               className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
               onClick={() => {setMenuOpen(false)}}
             >
               Multi-Field Form with Validation
+            </Link>
+            <Link
+              to="/multi-field-form-zod"
+              className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
+              onClick={() => {setMenuOpen(false)}}
+            >
+              Multi-Field Form with Zod Validation
             </Link>
           </nav>
 
