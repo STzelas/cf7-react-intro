@@ -14,6 +14,7 @@ import FocusInput from "./components/FunctionalComponents/FocusInput.tsx";
 import UncontrolledInput from "./components/FunctionalComponents/UncontrolledInput.tsx";
 import MultiFieldForm from "./components/FormComponents/MultiFieldForm.tsx";
 import MultiFieldFormWithValidation from "./components/FormComponents/MultiFieldFormWithValidation.tsx";
+import MultiFieldFormWithZodValidation from "./components/FormComponents/MultiFieldFormWithZodValidation.tsx";
 
 
 
@@ -57,6 +58,7 @@ function App() {
               <Route index element={<HomePage/>}/>
               <Route path="multi-field-form" element={<MultiFieldForm/>}/>
               <Route path="multi-field-form-validation" element={<MultiFieldFormWithValidation/>}/>
+              <Route path="multi-field-form-zod" element={<MultiFieldFormWithZodValidation/>}/>
             </Route>
 
             <Route path="examples" element={<RouterExamplesLayout/>}>
