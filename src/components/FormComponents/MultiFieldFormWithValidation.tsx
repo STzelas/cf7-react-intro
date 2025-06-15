@@ -7,7 +7,7 @@ const initialValues: FormValues = {
   message: "",
 }
 
-const MultiFieldForm = () => {
+const MultiFieldFormWithValidation = () => {
 
   const [values, setValues] = useState<FormValues>(initialValues);
   const [submissions, setSubmissions] = useState<FormValues | null>(null);
@@ -141,4 +141,4 @@ const MultiFieldForm = () => {
   )
 }
 
-export default MultiFieldForm
+export default MultiFieldFormWithValidation
