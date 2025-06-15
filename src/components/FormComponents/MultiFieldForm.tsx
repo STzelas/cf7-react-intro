@@ -57,6 +57,7 @@ const MultiFieldForm = () => {
           value={values.message}
           onChange={handleChange}
           required
+          minLength={5}
         >
         </textarea>
         <div className="flex justify-between gap-4">
