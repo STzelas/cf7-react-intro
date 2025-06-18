@@ -26,6 +26,41 @@ function App() {
   //   return() =>  clearInterval(id)
   // }, [])
 
+
+  // // Πως στέλνουμε ένα αίτημα με fetch
+  // const url: string = "/api/v1/products"
+  //
+  // fetch(url, {
+  //   method: "GET", // δηλώνω την μέθοδο, GET/POST/PATCH/DELETE
+  //   headers: { "Content-Type": "application/json" }, // headers
+  //   body: JSON.stringify(payload) // POST, PUT, PATCH το κάνουμε string. Στην get δεν χρειάζεται body
+  //   }
+  // )
+  //   .then(res => {
+  //     if (!res.ok) throw new Error(res.statusText);
+  //     return res.json();  // το response σε json
+  //   }
+  // )
+  //   .then(data => {})
+  //   .catch(error => console.log(error));
+  //
+  // async function fetchData(url, method = "GET", payload = null) {
+  //   try {
+  //     const options = {
+  //       method: method,
+  //       headers: {"Content-Type": "application/json" },
+  //     }
+  //
+  //     if (payload) options.body = JSON.stringify(payload);
+  //
+  //     const res = await fetch(url, options)
+  //     return await res.json()
+  //
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // }
+
   return (
     <>
       {/*<Layout>*/}
