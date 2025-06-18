@@ -15,6 +15,7 @@ import UncontrolledInput from "./components/FunctionalComponents/UncontrolledInp
 import MultiFieldForm from "./components/FormComponents/MultiFieldForm.tsx";
 import MultiFieldFormWithValidation from "./components/FormComponents/MultiFieldFormWithValidation.tsx";
 import MultiFieldFormWithZodValidation from "./components/FormComponents/MultiFieldFormWithZodValidation.tsx";
+import MultiFieldFormWithReactHook from "./components/FormComponents/MultiFieldFormWithReactHook.tsx";
 
 
 
@@ -59,6 +60,7 @@ function App() {
               <Route path="multi-field-form" element={<MultiFieldForm/>}/>
               <Route path="multi-field-form-validation" element={<MultiFieldFormWithValidation/>}/>
               <Route path="multi-field-form-zod" element={<MultiFieldFormWithZodValidation/>}/>
+              <Route path="multi-field-react-hook" element={<MultiFieldFormWithReactHook/>}/>
             </Route>
 
             <Route path="examples" element={<RouterExamplesLayout/>}>
