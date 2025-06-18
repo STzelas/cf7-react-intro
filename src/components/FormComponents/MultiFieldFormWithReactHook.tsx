@@ -52,7 +52,7 @@ const MultiFieldFormWithReactHook = () => {
     reset()
   }
 
-  const watchedValues = watch() // αυτό είναι το state (περίπου)
+  const watchedValues = watch() // αυτό είναι το state (περίπου) / σε σχέση με τα state, δεν προκαλούν rerender, απλά αλλάζουν τιμές
 
   return (
     <>
