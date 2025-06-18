@@ -1,6 +1,7 @@
 import { z } from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
+import {Button} from "@/components/ui/button.tsx";
 
 
 // Validation with Zod library - start Schema
@@ -92,13 +93,14 @@ const MultiFieldFormWithReactHook = () => {
           <p className="text-cf-dark-red">{errors.message.message}</p>
         )}
         <div className="flex justify-between gap-4">
-          <button
-            type="submit"
-            className="bg-cf-dark-red text-white px-4 py-2 border border-gray-300 rounded-lg"
-            // onClick={handleSubmit}
-          >
-            Submit
-          </button>
+          {/*<button*/}
+          {/*  type="submit"*/}
+          {/*  className="bg-cf-dark-red text-white px-4 py-2 border border-gray-300 rounded-lg"*/}
+          {/*  // onClick={handleSubmit}*/}
+          {/*>*/}
+          {/*  Submit*/}
+          {/*</button>*/}
+          <Button>Submit</Button>
           <button
             type="button"
             className="bg-gray-200 px-4 py-2 border border-gray-300 rounded-lg"
