@@ -41,6 +41,13 @@ const HeaderResponsive = () => {
             {/*  Multi-Field Form*/}
             {/*</Link>*/}
             <Link
+              to="/multi-field-react-hook"
+              className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
+              onClick={() => {setMenuOpen(false)}}
+            >
+              Multi-Field Form with React Hook
+            </Link>
+            <Link
               to="/multi-field-form-validation"
               className={"block md-inline hover:underline hover:underline-offset-4 text-center p-2"}
               onClick={() => {setMenuOpen(false)}}
