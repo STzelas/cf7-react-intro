@@ -31,6 +31,7 @@ const MultiFieldForm = () => {
 
   return (
     <>
+      <h1 className="text-center mt-4">Multi Field form</h1>
       <form className="mt-10 space-y-4 flex flex-col mx-auto w-75">
         <input
           type="text"
