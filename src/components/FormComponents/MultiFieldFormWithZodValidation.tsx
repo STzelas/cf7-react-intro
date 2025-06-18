@@ -30,32 +30,28 @@ const MultiFieldFormWithZodValidation = () => {
 
   const [values, setValues] = useState<FormValues>(initialValues);
   const [submissions, setSubmissions] = useState<FormValues | null>(null);
-  const [errors, setErrors] = useState<FormErrors | null>(null);
+  const [errors, setErrors] = useState<FormErrors>();
 
-  const validateForm = (values: FormValues): FormErrors => {
-    const valErrors: FormErrors = {};
-    if (!values.name.trim()) {
-      valErrors.name = "Name is required";
+  const validateForm = () => {
+
+    const result = formSchema.safeParse(values);
+    // {success: true, data: validatedData} αν έχουμε success
+    // {success: false, error: errors}      αν όχι
+
+    // ZOD docs
+    if (!result.success) {
+      const newErrors: FormErrors = {}
+
+      result.error.issues.forEach((issue) => {
+        const fieldName = issue.path[0] as keyof FormValues;
+        newErrors[fieldName] = issue.message
+      })
+      setErrors(newErrors);
+      return false;   // success false
     }
-    if (!values.email.trim()) {
-      valErrors.email = "Email is required";
-    }
-    if (!/.+@.+\..+/.test(values.email.trim())) {                   // simple email regEx
-      valErrors.email = "Email must be a valid email address";
-    }
-    if (!values.email.trim() && !/.+@.+\..+/.test(values.email)) {  // simple email regEx
-      valErrors.email = "Email is required and must be a valid email address";
-    }
-    if (!values.message.trim()) {
-      valErrors.message = "Message is required";
-    }
-    if (values.message.length < 5) {
-      valErrors.message = "Message must be at least 5 characters";
-    }
-    if (values.message.length < 5 && !values.message.trim()) {
-      valErrors.message = "Message is required and must be at least 5 characters";
-    }
-    return valErrors;
+
+    setErrors({})
+    return true // success true άρα δεν έχει errors
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -69,21 +65,17 @@ const MultiFieldFormWithZodValidation = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const validationErrors = validateForm(values)
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors)
-      setSubmissions(null)
-      return
-    }
+    const isValid = validateForm()
 
-    setSubmissions(values)
-    setValues(initialValues)
-    setErrors(null)
+    if (isValid) {
+      setSubmissions(values)
+      setValues(initialValues)
+    }
   }
 
   const handleClear = () => {
     setValues(initialValues)
-    setErrors(null)
+    setErrors({})
     setSubmissions(null)
   }
 
@@ -97,7 +89,6 @@ const MultiFieldFormWithZodValidation = () => {
           onChange={handleChange}
           placeholder="Name"
           className="px-4 py-2 border border-gray-300 rounded-lg"
-          required
         />
         {errors?.name && (
           <p className="text-cf-dark-red">{errors?.name}</p>
@@ -109,7 +100,6 @@ const MultiFieldFormWithZodValidation = () => {
           onChange={handleChange}
           placeholder="Email"
           className="px-4 py-2 border border-gray-300 rounded-lg"
-          required
         />
         {errors?.email && (
           <p className="text-cf-dark-red">{errors?.email}</p>
@@ -120,7 +110,6 @@ const MultiFieldFormWithZodValidation = () => {
           name="message"
           value={values.message}
           onChange={handleChange}
-          required
           minLength={5}
         >
         </textarea>
