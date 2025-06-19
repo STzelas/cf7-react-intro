@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 // import MultiFieldFormWithReactHook from "./components/FormComponents/MultiFieldFormWithReactHook.tsx";
 import ProductList from "@/pages/ProductList.tsx";
 import RouterLayoutProducts from "@/components/Routers/RouterLayoutProducts.tsx";
+import Product from "./pages/Product";
 
 
 
@@ -29,7 +30,8 @@ function App() {
   // }, [])
 
 
-  // Πως στέλνουμε ένα αίτημα με fetch
+              // Πως στέλνουμε ένα αίτημα με fetch
+
   // const url: string = "/api/v1/products"
   //
   // fetch(url, {
@@ -65,7 +67,8 @@ function App() {
 
   return (
     <>
-      {/* EXAMPLES */}
+                                {/* EXAMPLES */}
+
       {/*<Layout>*/}
       {/*  <OnlineStatus/>*/}
       {/*  /!*<CounterWithReducer/>*!/*/}
@@ -87,7 +90,9 @@ function App() {
       {/*  /!*<CodingFactoryLogo/>*!/*/}
       {/*</Layout>*/}
 
-      {/* FIELD EXAMPLES AND ROUTE INTRO*/}
+
+                          {/* FIELD EXAMPLES AND ROUTE INTRO*/}
+
       {/*<BrowserRouter>*/}
         {/*<Layout>*/}
         {/*<Routes>*/}
@@ -130,7 +135,8 @@ function App() {
       {/*</BrowserRouter>*/}
 
 
-      {/*API CALLS APP*/}
+                                {/*API CALLS APP*/}
+
       <BrowserRouter>
         {/*<Layout>*/}
           <Routes>
@@ -168,7 +174,7 @@ function App() {
             {/*API CALLS APP*/}
             <Route path="products" element={<RouterLayoutProducts/>}>
               <Route index element={<ProductList/>}/>
-              {/*<Route path="new" element={<ProductNew/>}/>*/}
+              <Route path="new" element={<Product/>}/>
               {/*<Route path=":productId" element={<Product/>}/>*/}
             </Route>
 
