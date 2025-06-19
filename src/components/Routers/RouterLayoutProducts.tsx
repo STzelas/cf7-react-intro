@@ -1,6 +1,7 @@
 import Footer from "../LayoutComponents/Footer.tsx";
 import {Outlet} from "react-router";
 import HeaderResponsiveForProducts from "@/components/LayoutComponents/HeaderResponsiveForProducts.tsx";
+import { Toaster } from "sonner";
 
 const RouterLayout = () => {
 
@@ -14,6 +15,7 @@ const RouterLayout = () => {
           <Outlet/>
         </div>
         <Footer/>
+        <Toaster/>
       </div>
 
     </>
