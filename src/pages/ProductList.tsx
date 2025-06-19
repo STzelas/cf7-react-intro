@@ -12,6 +12,7 @@ import {deleteProduct, getProducts, type Product} from "@/api/products.ts";
 import {Button} from "@/components/ui/button.tsx";
 import {useNavigate} from "react-router";
 import {Pencil, Trash} from "lucide-react";
+import {toast} from "sonner";
 
 const ProductList = () => {
 
@@ -43,8 +44,10 @@ const ProductList = () => {
       await deleteProduct(id)
       // Φτιάχνεις ένα state που φιλτράρεις και αφαιρείς ενα id
       setProducts((prevState) => prevState.filter(p => p.id !== id))
+      toast.success("Product deleted successfully.")
       console.log(products)
     } catch (err) {
+      toast.error("Error deleting product with id " + id)
       console.log(err)
     } finally {
       setDeleting(null)
