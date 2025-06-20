@@ -59,6 +59,12 @@ const ProductList = () => {
   return (
     <>
       <div className="p-8">
+        <div className="text-right">
+          <Button
+
+            onClick={() => {navigate("/products/new")}}
+          >Εισαγωγή</Button>
+        </div>
       <Table>
         <TableCaption>List of all products</TableCaption>
         <TableHeader className={"bg-gray-50"}>
