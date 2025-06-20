@@ -77,12 +77,25 @@ export async function updateProduct(
   }): Promise<ProductType> {
   const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/${id}`,{
     method: "PUT",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
   });
   if (!res.ok) {
     throw new Error("Failed to update product");
   }
-  return res.json();
+  return await res.json();
+}
+
+// POST function πυο δημιουργεί προιόν
+export async function createProduct(data: Omit<ProductType, "id">):Promise<ProductType> {
+  const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/`,{
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+  if (!res.ok) throw new Error("Failed to create product");
+  console.log(res)
+  return await res.json();
 }
 
 // DELETE function που διαγράφει ένα product
