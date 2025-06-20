@@ -174,7 +174,7 @@ function App() {
             {/*API CALLS APP*/}
             <Route path="products" element={<RouterLayoutProducts/>}>
               <Route index element={<ProductList/>}/>
-              <Route path="new" element={<Product/>}/>
+              <Route path=":productId" element={<Product/>}/>
               {/*<Route path=":productId" element={<Product/>}/>*/}
             </Route>
 
