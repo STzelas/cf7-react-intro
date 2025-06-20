@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {deleteProduct, getProducts, type Product} from "@/api/products.ts";
+import {deleteProduct, getProducts, type ProductType} from "@/api/products.ts";
 import {Button} from "@/components/ui/button.tsx";
 import {useNavigate} from "react-router";
 import {Pencil, Trash} from "lucide-react";
@@ -16,7 +16,7 @@ import {toast} from "sonner";
 
 const ProductList = () => {
 
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<ProductType[]>([])
   // Ένδειξη Loading / true επειδή φορτώνει η λίστα απο την αρχή
   const [loading, setLoading] = useState<boolean>(true)
 
@@ -27,7 +27,7 @@ const ProductList = () => {
 
   useEffect(() => {
     getProducts()
-      .then((data:Product[]) => setProducts(data))
+      .then((data:ProductType[]) => setProducts(data))
       // πριν γίνει fetch φέρνουμε το loading (Loading…),
       // άρα στο τέλος αφού φορτώσει
       // πρέπει να το εξαφανίσουμε αυτο
@@ -70,7 +70,7 @@ const ProductList = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {products.map((product: Product) => (
+          {products.map((product: ProductType) => (
             <TableRow key={product.id}>
               <TableCell className="font-medium">{product.id}</TableCell>
               <TableCell>{product.name}</TableCell>
