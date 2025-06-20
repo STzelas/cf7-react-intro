@@ -20,7 +20,7 @@ export const productSchema = z.object({
 
 export const productFormSchema = productSchema.omit({id: true})
 
-export type ProductType = z.infer<typeof productFormSchema>
+export type ProductType = z.infer<typeof productSchema>
 
 // θα κάνουμε εδώ κλήσεις για τα products
 const API_URL: string = import.meta.env.VITE_API_URL;
