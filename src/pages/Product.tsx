@@ -16,11 +16,11 @@ type ProductModeProps = {
 }
 
 
-const ProductEdit = ({ mode }: ProductModeProps) => {
+const Product = ({ mode }: ProductModeProps) => {
   // Για να διαβάσουμε το id απο το list
   const { productId } = useParams<{productId: string}>();
   const navigate = useNavigate();
-  const isEdit = mode === "edit" || (!!productId && mode === "create");
+  const isEdit = mode === "edit" || (!productId && mode === "create");
 
   const {
     register,
@@ -197,4 +197,4 @@ const ProductEdit = ({ mode }: ProductModeProps) => {
   )
 }
 
-export default ProductEdit
+export default Product
