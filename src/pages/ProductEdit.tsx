@@ -1,7 +1,7 @@
 import {useNavigate, useParams} from "react-router";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {getProductById, productFormSchema, updateProduct} from "@/api/products.ts";
+import {createProduct, getProductById, productFormSchema, updateProduct} from "@/api/products.ts";
 import { type ProductType} from "@/api/products.ts"
 import { Label } from "@radix-ui/react-label";
 import { Textarea } from "@/components/ui/textarea.tsx";
@@ -11,12 +11,17 @@ import { Button } from "@/components/ui/button";
 import {useEffect} from "react";
 import { toast } from "sonner";
 
+type ProductModeProps = {
+  mode?: "edit" | "create";
+}
 
-const Product = () => {
+
+const ProductEdit = ({ mode }: ProductModeProps) => {
   // Για να διαβάσουμε το id απο το list
   const { productId } = useParams<{productId: string}>();
-
   const navigate = useNavigate();
+  const isEdit = mode === "edit" || (!!productId && mode === "create");
+
   const {
     register,
     handleSubmit,
@@ -39,23 +44,8 @@ const Product = () => {
     }
   })
 
-  const onSubmit = async (data: Omit<ProductType, "id">) => {
-
-    try {
-      if (productId){
-        await updateProduct(Number(productId), data)
-        toast.success("Product updated successfully.")
-      }
-
-      navigate("/products")
-    } catch (err) {
-      console.log(err);
-    }
-
-  }
-
   useEffect(() => {
-    if (productId) {
+    if (isEdit && productId) {
       getProductById(Number(productId))  // typecast
         .then((data) => {
           // setValue("name", data.name ?? "");
@@ -80,13 +70,37 @@ const Product = () => {
     }
   }, [productId, reset]);
 
+  const onSubmit = async (data: Omit<ProductType, "id">) => {
+
+    try {
+      if (isEdit && productId){
+        await updateProduct(Number(productId), data)
+        toast.success("Product updated successfully.")
+      } else {
+        await createProduct(data)
+        toast.success("Product created successfully.")
+      }
+      navigate("/products")
+    } catch (err) {
+      console.log(err);
+      toast.error(
+        err instanceof Error ? err.message : "Something went wrong"
+      )
+    }
+
+  }
+
+
+
   return (
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-xl mx-auto mt-12 mb-4 p-8 border border-gray-300 rounded-lg space-y-6"
       >
-        <h1 className="text-xl font-bold">Edit Product</h1>
+        <h1 className="text-xl font-bold">
+          {isEdit ? "Edit Product" : "Create New Product"}
+        </h1>
         <div>
           <Label className="mb-1" htmlFor="name">Name
           </Label>
@@ -177,10 +191,10 @@ const Product = () => {
         <Button variant={"default"} type="submit" className="w-full text-white"
                 disabled={isSubmitting}
 
-        >{isSubmitting ? "Saving..." : "Save Edit"}</Button>
+        >{isSubmitting ? "Saving..." : "Submit"}</Button>
       </form>
     </>
   )
 }
 
-export default Product
+export default ProductEdit
