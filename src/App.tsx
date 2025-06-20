@@ -18,7 +18,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 // import MultiFieldFormWithReactHook from "./components/FormComponents/MultiFieldFormWithReactHook.tsx";
 import ProductList from "@/pages/ProductList.tsx";
 import RouterLayoutProducts from "@/components/Routers/RouterLayoutProducts.tsx";
-import ProductEdit from "./pages/ProductEdit.tsx";
+import Product from "@/pages/Product.tsx";
 
 
 
@@ -174,8 +174,8 @@ function App() {
             {/*API CALLS APP*/}
             <Route path="products" element={<RouterLayoutProducts/>}>
               <Route index element={<ProductList/>}/>
-              <Route path=":new" element={<ProductEdit mode={"create"}/>}/>
-              <Route path=":productId" element={<ProductEdit mode={"edit"}/>}/>
+              <Route path=":new" element={<Product mode={"create"}/>}/>
+              <Route path=":productId" element={<Product mode={"edit"}/>}/>
             </Route>
 
           </Routes>
