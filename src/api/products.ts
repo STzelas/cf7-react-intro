@@ -9,16 +9,18 @@ export const productSchema = z.object({
       /^[a-zA-Z0-9_]+$/,
       "Slug must use only Latin letters, numbers, - or _",
     ),
-  description: z.string().optional(),
-  image: z.string().url("Must be valid URL").optional(),
-  price: z.coerce.number().nonnegative("Must be greater than 0").optional(),
+  description: z.string(),
+  image: z.string().url("Must be valid URL").optional().or(z.literal("")),
+  price: z.coerce.number().nonnegative("Must be greater than 0"),
   is_active: z.boolean(),
   is_favorite: z.boolean(),
-  sort: z.coerce.number().int().min(0, "Must be greater than 0").optional(),
+  sort: z.coerce.number().int().min(0, "Must be greater than 0"),
   category_id: z.coerce.number().int().min(1, "Category is Required"),
 })
 
-export type Product = z.infer<typeof productSchema>
+export const productFormSchema = productSchema.omit({id: true})
+
+export type ProductType = z.infer<typeof productFormSchema>
 
 // θα κάνουμε εδώ κλήσεις για τα products
 const API_URL: string = import.meta.env.VITE_API_URL;
@@ -38,7 +40,7 @@ const TENANT_ID: string = import.meta.env.VITE_TENANT_ID;
 // }
 
 // GET function που επιστρέφει Products τύπου product, σε Array
-export async function getProducts():Promise<Product[]> {
+export async function getProducts():Promise<ProductType[]> {
   const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/`);
   if (!res.ok) {
     throw new Error("Failed to fetch products");
@@ -49,7 +51,7 @@ export async function getProducts():Promise<Product[]> {
 }
 
 // GET function που επιστρέφει 1 object Product με το id του
-export async function getProductById(id: number):Promise<Product> {
+export async function getProductById(id: number):Promise<ProductType> {
   const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/${id}`);
 
   if (!res.ok) {
@@ -72,7 +74,7 @@ export async function updateProduct(
     is_active: boolean,
     is_favorite: boolean,
     sort: number,
-  }): Promise<Product> {
+  }): Promise<ProductType> {
   const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/${id}`,{
     method: "PUT",
     body: JSON.stringify(data)
