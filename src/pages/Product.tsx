@@ -187,11 +187,19 @@ const Product = ({ mode }: ProductModeProps) => {
           />
           <Label htmlFor="is_favorite">Favorite</Label>
         </div>
-
-        <Button variant={"default"} type="submit" className="w-full text-white"
+        <Button variant={"default"} type="submit" className="w-full text-white mt-2"
                 disabled={isSubmitting}
 
         >{isSubmitting ? "Saving..." : "Submit"}</Button>
+        <div className="text-center">
+          <Button
+            variant={"outline"} className="w-1/2"
+            onClick={() => {navigate("/products")}}
+          >Πίσω</Button>
+        </div>
+
+
+
       </form>
     </>
   )
